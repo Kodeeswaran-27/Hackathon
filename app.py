@@ -7,6 +7,8 @@ from streamlit_lottie import st_lottie  # pip install streamlit-lottie
 import time  
 from datetime import date
 
+import requests
+
 # GitHub: https://github.com/andfanilo/streamlit-lottie
 # Lottie Files: https://lottiefiles.com/
 
@@ -157,7 +159,7 @@ res_2 = "In 1998, the following were established:\n\n1. The International Instit
 
 res_3 =  "Section 144 is a provision in the Indian Penal Code that empowers a public servant to issue an order prohibiting an assembly of five or more persons in a public place that has the potential to cause disturbance of public peace. This section is commonly used by authorities to prevent large gatherings during protests, strikes, or other forms of civil disobedience. Violation of this order is a criminal offense punishable under section 188 of the IPC."
 
-res_4 = "Our litigation strategy will focus on three key arguments:\n\n1. Non-infringement: We will argue that our product does not fall within the scope of the competitor's patent. We will present evidence to show that our product operates differently from the competitor's patented technology and does not infringe upon any of the patent's claims.\n\n2. Invalidity: We will challenge the validity of the competitor's patent. We will present evidence to show that the patent is either obvious or lacks novelty, and therefore should be deemed invalid.\n\n3. Laches: We will argue that the competitor has unreasonably delayed in bringing the lawsuit, and as a result, they should be barred from pursuing their claim. We will present evidence to show that the competitor had knowledge of our product for an extended period before filing the lawsuit.\n\nIn addition to these arguments, we will also consider potential counterclaims against the competitor. If we can identify any instances of the competitor infringing upon our intellectual property, we will pursue counterclaims to strengthen our position in the litigation.\n\nExpert witnesses will play a crucial role in our defense. We will retain experts in the relevant technical fields to provide testimony on the non-infringement, invalidity, and laches arguments. We will also consider retaining experts to provide testimony on the damages, if necessary.\n\nIn terms of legal precedents and statutes, we will review relevant case law and statutes to identify any legal principles that can support our defense. We will also consider any settlement negotiations with the competitor, but only if it is in our client's best interests to do so.\n\nOur pre-trial preparation will involve a thorough review of the discovery process. We will work closely with our client to identify any relevant documents and witnesses, and we will prepare a detailed discovery plan to ensure that we obtain all necessary information.\n\nDuring the motion practice, we will file motions to dismiss the competitor's claims, to exclude certain evidence, and to limit the scope of discovery. We will also consider filing a motion for summary judgment, if appropriate.\n\nAt trial, we will present our arguments in a clear and persuasive manner, using visual aids and demonstrative evidence to support our position. We will also cross-examine the competitor's witnesses and present our own witnesses to testify on our behalf.\n\nIn terms of settlement negotiations, we will only consider settlement if it is in our client's best interests to do so. We will work closely with our client to evaluate the potential benefits and drawbacks of settlement, and we will provide guidance on any settlement proposals that are presented by the competitor.\n\nOverall, our litigation strategy will aim to protect our client's interests, minimize potential damages, and achieve a favorable outcome in the litigation. We will work closely with our client to ensure that we develop a comprehensive plan that is tailored to their specific needs and circumstances."
+# res_4 = "Our litigation strategy will focus on three key arguments:\n\n1. Non-infringement: We will argue that our product does not fall within the scope of the competitor's patent. We will present evidence to show that our product operates differently from the competitor's patented technology and does not infringe upon any of the patent's claims.\n\n2. Invalidity: We will challenge the validity of the competitor's patent. We will present evidence to show that the patent is either obvious or lacks novelty, and therefore should be deemed invalid.\n\n3. Laches: We will argue that the competitor has unreasonably delayed in bringing the lawsuit, and as a result, they should be barred from pursuing their claim. We will present evidence to show that the competitor had knowledge of our product for an extended period before filing the lawsuit.\n\nIn addition to these arguments, we will also consider potential counterclaims against the competitor. If we can identify any instances of the competitor infringing upon our intellectual property, we will pursue counterclaims to strengthen our position in the litigation.\n\nExpert witnesses will play a crucial role in our defense. We will retain experts in the relevant technical fields to provide testimony on the non-infringement, invalidity, and laches arguments. We will also consider retaining experts to provide testimony on the damages, if necessary.\n\nIn terms of legal precedents and statutes, we will review relevant case law and statutes to identify any legal principles that can support our defense. We will also consider any settlement negotiations with the competitor, but only if it is in our client's best interests to do so.\n\nOur pre-trial preparation will involve a thorough review of the discovery process. We will work closely with our client to identify any relevant documents and witnesses, and we will prepare a detailed discovery plan to ensure that we obtain all necessary information.\n\nDuring the motion practice, we will file motions to dismiss the competitor's claims, to exclude certain evidence, and to limit the scope of discovery. We will also consider filing a motion for summary judgment, if appropriate.\n\nAt trial, we will present our arguments in a clear and persuasive manner, using visual aids and demonstrative evidence to support our position. We will also cross-examine the competitor's witnesses and present our own witnesses to testify on our behalf.\n\nIn terms of settlement negotiations, we will only consider settlement if it is in our client's best interests to do so. We will work closely with our client to evaluate the potential benefits and drawbacks of settlement, and we will provide guidance on any settlement proposals that are presented by the competitor.\n\nOverall, our litigation strategy will aim to protect our client's interests, minimize potential damages, and achieve a favorable outcome in the litigation. We will work closely with our client to ensure that we develop a comprehensive plan that is tailored to their specific needs and circumstances."
 
 res2_list = res_2.split("\n")
 
@@ -166,17 +168,17 @@ html_code = """<div style="background-color:#ffffff;padding:50px;border-radius: 
         <p style="text-align:center;">{}</p>  
     </div> """.format(res)
 
-html_code2 = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
-        <p style="text-align:center;">{}</p>  
-    </div> """.format(res_2)
+# html_code2 = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+#         <p style="text-align:center;">{}</p>  
+#     </div> """.format(res_2)
 
 html_code3 = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
         <p style="text-align:center;">{}</p>  
     </div> """.format(res_3)
 
-html_code4 =  """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
-        <p style="text-align:center;">{}</p>  
-    </div> """.format(res_4)
+# html_code4 =  """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+#         <p style="text-align:center;">{}</p>  
+#     </div> """.format(res_4)
 
 def main():
     # st.header(":green[Upload your file]")
@@ -251,6 +253,34 @@ def main():
         else:
             st.write("No file uploaded") 
 
+def rag(question):
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
+    from langchain.chains import RetrievalQA
+    from langchain.document_loaders import TextLoader
+    from langchain.document_loaders import PyPDFLoader
+    from langchain.document_loaders import DirectoryLoader
+    from langchain.embeddings import HuggingFaceEmbeddings
+    from langchain.vectorstores import Chroma
+    from langchain.chains.question_answering import load_qa_chain
+    from langchain import HuggingFaceHub
+
+    # Load and process the pdf files
+    loader = DirectoryLoader('./cases', glob="./*.pdf", loader_cls=PyPDFLoader)
+    documents = loader.load()
+
+    #splitting the text into
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    texts = text_splitter.split_documents(documents)
+
+    # Embeddings
+    embeddings = HuggingFaceEmbeddings()
+    db = Chroma.from_documents(texts, embeddings)
+    llm=HuggingFaceHub(repo_id="HuggingFaceH4/zephyr-7b-beta", model_kwargs={"temperature":0.02, "max_length":512},huggingfacehub_api_token='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')
+    chain = load_qa_chain(llm, chain_type="stuff")
+    search_type="mmr"
+    docs = db.search(question,search_type)
+
+    return chain.run(input_documents=docs, question=question)
 
 def text_input(selected):
     # st.header("Legal Assistant")
@@ -270,6 +300,9 @@ def text_input(selected):
             # Clear the message  
             placeholder.empty() 
             # st.write("### Summarized Content")
+            result = rag(question)
+            html_code2 = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+                        <p style="text-align:center;">{}</p></div> """.format(result)
             st.markdown("""<h3 style="color:#ffffff">Generated content</h3>""",True)
             st.markdown(html_code2, unsafe_allow_html=True)
             question = ""
@@ -292,12 +325,24 @@ def text_input(selected):
             placeholder = st.empty()
             # Display a message in white color  
             placeholder.markdown('<h3 style="color:white;">Generating litigation strategy....</h3>', unsafe_allow_html=True)
+            API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
+            headers = {"Authorization": "Bearer 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"}
+            def query(payload):
+                response = requests.post(API_URL, headers=headers, json=payload)
+                return response.json()
+            inp = "Give me a decent litigation strategy with key arguments for the following in 50 words and don't include the prompt I sent."+" question1"+" Your strategy should aim to protect your client's interests, minimize potential damages, and achieve a favorable outcome in the litigation. "
+            output = query({ "inputs": inp, })
+            output1 = output[0]['generated_text']
+            result = output1.replace(inp," ")
+                
             # Wait for 5 seconds
-            time.sleep(5)
             # Clear the message  
             placeholder.empty()
             # st.write("### Summarized Content")
             st.markdown("""<h3 style="color:#ffffff">Litigation strategy</h3>""",True)
+            html_code4 =  """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+            <p style="text-align:center;">{}</p>  
+            </div> """.format(result)
             st.markdown(html_code4, unsafe_allow_html=True) 
 
 
