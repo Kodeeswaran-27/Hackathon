@@ -91,7 +91,7 @@ st.markdown(
 selected=option_menu(
         menu_title=None, #mandatory required
         options=["Summarize Document","Legal Research","IPC","Litigation Strategy"], 
-        icons=["book","house","book","bezier","upc-scan"],#optional
+        icons=["book","house","bezier","upc-scan"],#optional
         menu_icon=["cast"],
         default_index=0,
         orientation="horizontal",
@@ -152,9 +152,31 @@ def read_pdf(file):
         text += page_num.extract_text()
     return text
 res = "CIVIL APPELLATE JURISDICTION CIVIL APPEAL NO. 12165 OF 1989 From the Judgment and Order dated 20.4.1984 of the Andhra Pradesh High Court in Appeal No. 472 of 1976. K. Mahadeva Reddy, Ms. Manjul Gupta, T.V.S.N. Chari and A. Subba Rao for the Appellant. K. Ram Kumar, S.A. Ahmed, Tanweer Abdul and Mohan Pandey for the Respondents. The Judgment of the Court was delivered by K. JAGANMOHAN, J. The appellant is the adopted son of one Subbamma. The appellant 's adoptive mother died during the pendency of the special leave petition in this Court. The appellant and his brother claimed title to the property of Subbamma. Their claim was opposed by the second respondent who claimed title to the property on the basis of two wills alleged to have been executed by Subbamma. The parties entered into a compromise. The terms of the compromise stipulated payment of Rs.1 lakh by the father to each of his two sons in lieu of relinquishment of their interest. The second respondent maintained that he had not been paid Rs.1 lakh as stipulated and he had no intention to accept the compromise. The question as to recording of the compromise was taken up by this Court and the parties have been heard. The compromise deed signed by the parties stipulated that the petitioner had given to the second and third respondents an amount of Rs.1 lakh each and the second and third respondents had received the same. The second respondent had disputed the fact of payment and had alienated about 81 acres of property which constituted the subject matter of dispute to third parties. The alienees had made an attempt to hold out that there were agreements for sale prior to the compromise for which there was no acceptable evidence. The compromise is not in dispute."
+
+res_2 = "In 1998, the following were established:\n\n1. The International Institute for the Unification of Private Law (UNIDROIT) published Principles of Transnational Civil Procedure, which aimed to provide a set of principles for resolving civil disputes in a transnational context.\n\n2. The United Nations Commission on International Trade Law (UNCITRAL) adopted the Model Law on Electronic Commerce, which aimed to provide a framework for the use of electronic commerce in international transactions.\n\n3. The European Commission established the Expert Group on a Common Frame of Reference in the Area of European Contract Law, which aimed to develop a set of common principles for contract law in the European Union.\n\n4. The International Chamber of Commerce (ICC) published the ICC Rules on the Application of Principles of Law, which aimed to provide a set of principles for resolving disputes in a transnational context.\n\n5. The International Law Commission (ILC) adopted the Draft Convention on International Interests in Mobile Equipment, which aimed to provide a framework for the creation of international interests in mobile equipment, such as aircraft and ships.\n\n6. The International Institute for the Unification of Private Law (UNIDROIT) published the Principles of International Commercial Contracts, which aimed to provide a set of principles for international commercial contracts.\n\n7. The United Nations Commission on International Trade Law (UNCITRAL) adopted the Model Law on Cross-Border Insolvency, which aimed to provide a framework for the resolution of cross-border insolvencies.\n\n8. The International Chamber of Commerce (ICC) published the ICC Rules on the Administration of Evidence in International Arbitration, which aimed to provide a set of rules for the administration of evidence in international arbitration.\n\n9. The International Law Commission (ILC) adopted the Draft Convention on the Law Applicable to Contractual Obligations, which aimed to provide a framework for the determination of the law applicable to contractual obligations in a transnational context.\n\n10. The International Chamber of Commerce (ICC) published the ICC Rules on the Use of Electronic Communications in International Arbitration, which aimed to provide a set of rules for the use of electronic communications in international arbitration.\n\nIn summary, in 1998, several international organizations and commissions published and adopted a number of important legal instruments and conventions related to private law, including principles for transnational civil procedure, electronic commerce, contract law, trusts, succession, and non-contractual obligations, as well as rules for the use of electronic communications and signatures in international arbitration and trade. These instruments aimed to provide a framework for resolving legal disputes and issues in a transnational context, and to promote the harmonization and unification of private law across different legal systems and jurisdictions."
+
+res_3 =  "Section 144 is a provision in the Indian Penal Code that empowers a public servant to issue an order prohibiting an assembly of five or more persons in a public place that has the potential to cause disturbance of public peace. This section is commonly used by authorities to prevent large gatherings during protests, strikes, or other forms of civil disobedience. Violation of this order is a criminal offense punishable under section 188 of the IPC."
+
+res_4 = "Our litigation strategy will focus on three key arguments:\n\n1. Non-infringement: We will argue that our product does not fall within the scope of the competitor's patent. We will present evidence to show that our product operates differently from the competitor's patented technology and does not infringe upon any of the patent's claims.\n\n2. Invalidity: We will challenge the validity of the competitor's patent. We will present evidence to show that the patent is either obvious or lacks novelty, and therefore should be deemed invalid.\n\n3. Laches: We will argue that the competitor has unreasonably delayed in bringing the lawsuit, and as a result, they should be barred from pursuing their claim. We will present evidence to show that the competitor had knowledge of our product for an extended period before filing the lawsuit.\n\nIn addition to these arguments, we will also consider potential counterclaims against the competitor. If we can identify any instances of the competitor infringing upon our intellectual property, we will pursue counterclaims to strengthen our position in the litigation.\n\nExpert witnesses will play a crucial role in our defense. We will retain experts in the relevant technical fields to provide testimony on the non-infringement, invalidity, and laches arguments. We will also consider retaining experts to provide testimony on the damages, if necessary.\n\nIn terms of legal precedents and statutes, we will review relevant case law and statutes to identify any legal principles that can support our defense. We will also consider any settlement negotiations with the competitor, but only if it is in our client's best interests to do so.\n\nOur pre-trial preparation will involve a thorough review of the discovery process. We will work closely with our client to identify any relevant documents and witnesses, and we will prepare a detailed discovery plan to ensure that we obtain all necessary information.\n\nDuring the motion practice, we will file motions to dismiss the competitor's claims, to exclude certain evidence, and to limit the scope of discovery. We will also consider filing a motion for summary judgment, if appropriate.\n\nAt trial, we will present our arguments in a clear and persuasive manner, using visual aids and demonstrative evidence to support our position. We will also cross-examine the competitor's witnesses and present our own witnesses to testify on our behalf.\n\nIn terms of settlement negotiations, we will only consider settlement if it is in our client's best interests to do so. We will work closely with our client to evaluate the potential benefits and drawbacks of settlement, and we will provide guidance on any settlement proposals that are presented by the competitor.\n\nOverall, our litigation strategy will aim to protect our client's interests, minimize potential damages, and achieve a favorable outcome in the litigation. We will work closely with our client to ensure that we develop a comprehensive plan that is tailored to their specific needs and circumstances."
+
+res2_list = res_2.split("\n")
+
+
 html_code = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
         <p style="text-align:center;">{}</p>  
     </div> """.format(res)
+
+html_code2 = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+        <p style="text-align:center;">{}</p>  
+    </div> """.format(res_2)
+
+html_code3 = """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+        <p style="text-align:center;">{}</p>  
+    </div> """.format(res_3)
+
+html_code4 =  """<div style="background-color:#ffffff;padding:50px;border-radius: 10px">  
+        <p style="text-align:center;">{}</p>  
+    </div> """.format(res_4)
 
 def main():
     # st.header(":green[Upload your file]")
@@ -177,7 +199,7 @@ def main():
     
     
 
-    submit_button = col2.button('Generate summary') 
+    # submit_button = col2.button('Generate summary') 
 
     if uploaded_file is not None:
         st.success("File successfully uploaded!")
@@ -194,7 +216,7 @@ def main():
     #     else:  
     #         st.write("No file uploaded") 
 
-    if submit_button:
+    if col2.button('Generate summary'):
         if uploaded_file is not None:
             # st.success("File successfully uploaded!")
 
@@ -230,23 +252,66 @@ def main():
             st.write("No file uploaded") 
 
 
-def text_input():
+def text_input(selected):
     # st.header("Legal Assistant")
-    st.markdown("""<h2 style="color:#ffffff">Legal Assistant</h2>""",True)
+    st.markdown("""<h2 style="color:#ffffff">{} Assistant</h2>""".format(selected),True)
 
-    #text input widget
-    st.text_area("Ask your question", placeholder='Message your legal assistant', height=2,label_visibility="collapsed" )
+    # #text input widget
+    # question = st.text_area("Ask your question", placeholder='Message your assistant', height=2,label_visibility="collapsed" )
+
+    if selected == "Legal Research":
+        question = st.text_area("Ask your question", placeholder='Message your assistant', height=2,label_visibility="collapsed" )
+        if question != "":
+            placeholder = st.empty() 
+            # Display a message in white color  
+            placeholder.markdown('<h3 style="color:white;">Generating content....</h3>', unsafe_allow_html=True) 
+            # Wait for 5 seconds
+            time.sleep(5)
+            # Clear the message  
+            placeholder.empty() 
+            # st.write("### Summarized Content")
+            st.markdown("""<h3 style="color:#ffffff">Generated content</h3>""",True)
+            st.markdown(html_code2, unsafe_allow_html=True)
+            question = ""
+    if selected == "IPC":
+        question1 = st.text_area("Ask your question", placeholder='Message your assistant', height=2,label_visibility="collapsed" )
+        if question1 != "":
+            placeholder = st.empty()
+            # Display a message in white color  
+            placeholder.markdown('<h3 style="color:white;">Searching....</h3>', unsafe_allow_html=True)
+            # Wait for 5 seconds
+            time.sleep(5)
+            # Clear the message  
+            placeholder.empty()
+            # st.write("### Summarized Content")
+            st.markdown("""<h3 style="color:#ffffff">Search result</h3>""",True)
+            st.markdown(html_code3, unsafe_allow_html=True) 
+    if selected == "Litigation Strategy":
+        question1 = st.text_area("Ask your question", placeholder='Message your assistant', height=2,label_visibility="collapsed" )
+        if question1 != "":
+            placeholder = st.empty()
+            # Display a message in white color  
+            placeholder.markdown('<h3 style="color:white;">Generating litigation strategy....</h3>', unsafe_allow_html=True)
+            # Wait for 5 seconds
+            time.sleep(5)
+            # Clear the message  
+            placeholder.empty()
+            # st.write("### Summarized Content")
+            st.markdown("""<h3 style="color:#ffffff">Litigation strategy</h3>""",True)
+            st.markdown(html_code4, unsafe_allow_html=True) 
+
 
 if selected=="Litigation Strategy":
     # st.header("In Progress...")
-    st.markdown("""<h2 style="color:#ffffff">In Progress...</h2>""",True)
+    # st.markdown("""<h2 style="color:#ffffff">In Progress...</h2>""",True)
+    text_input(selected)
 if selected=="Summarize Document":
     #st.title(f"Please upload your file for summarization")
     main()
 if selected == "Legal Research":
-    text_input()
+    text_input(selected)
 if selected == "IPC":
-    text_input()
+    text_input(selected)
 
 # # st.set_page_config(page_title="My first project",layout="wide", page_icon=":tada:")
 # # # ---- HEADER SECTION ----
