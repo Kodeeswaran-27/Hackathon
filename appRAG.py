@@ -138,8 +138,14 @@ def main():
 
             # Read and display content based on file type
             if uploaded_file.type == "application/pdf":
-                st.write("### PDF Content")
+                placeholder.markdown('<h3 style="color:white;">Summarizing content....</h3>', unsafe_allow_html=True)
                 pdf_text =  read_pdf(uploaded_file)
+                # Wait for 5 seconds
+                time.sleep(5)
+                # Clear the message  
+                placeholder.empty() 
+                st.markdown("""<h3 style="color:#ffffff">Summarized Content</h3>""",True)
+                st.markdown(html_code, unsafe_allow_html=True)
                 st.write(pdf_text)
 
             elif uploaded_file.type == "text/plain":
@@ -160,7 +166,7 @@ def main():
         else:
             st.write("No file uploaded") 
 
-def RAG():
+def RAG(question):
     import os
     import textwrap
     from langchain.document_loaders import PyPDFLoader
@@ -201,7 +207,7 @@ def RAG():
     chain = load_qa_chain(llm, chain_type="stuff")
     query = question
     docs = db.similarity_search(query)
-    response=chain.run(input_documents=docs, question=query)
+    return chain.run(input_documents=docs, question=query)
 
 
 def text_input(selected):
@@ -211,7 +217,7 @@ def text_input(selected):
     if selected == "Legal Research":
         question = st.text_area("Ask your question", placeholder='Message your assistant', height=2,label_visibility="collapsed" )
         if question != "":
-            placeholder = st.empty() 
+            #placeholder = st.empty() 
             # Display a message in white color  
             placeholder.markdown('<h3 style="color:white;">Generating content....</h3>', unsafe_allow_html=True) 
             # Wait for 5 seconds
@@ -220,7 +226,8 @@ def text_input(selected):
             placeholder.empty() 
             st.markdown("""<h3 style="color:#ffffff">Generated content</h3>""",True)
             st.markdown(html_code2, unsafe_allow_html=True)
-            question = ""
+            response = RAG(question)
+            st.write(response)
     if selected == "IPC":
         question1 = st.text_area("Ask your question", placeholder='Message your assistant', height=2,label_visibility="collapsed" )
         if question1 != "":
