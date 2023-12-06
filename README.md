@@ -133,6 +133,10 @@ https://medium.com/@tummurihari/revolutionizing-legal-practices-with-ai-legalysi
 drive link:
 https://drive.google.com/drive/folders/1c3iEjmGdZgkF5c00i9i8VzFphx_6o6Lz?usp=sharing
 
+github link:
+
+https://github.com/hari-tummuri/oneAPI-GenAI-Hackathon-2023
+
 
 
 
