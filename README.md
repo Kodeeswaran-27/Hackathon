@@ -62,3 +62,62 @@ Legalysis isn't just an AI-enhanced legal platform; it's a testament to innovati
 
 
 
+
+
+
+
+
+
+
+
+
+
+Topic : AI-Enhanced Legal Practice Platform
+team name : Legalysis
+team members : Hari Tummuri, Bhuvanesh Cheerla, Kodeeswaran C
+
+Legal document summarization, Legal research, Litigation strategy development
+
+Steps:-
+
+dataset collection :- we have used legal cases summarization dataset, Indian penal code dataset
+
+fine tuning :- We have used llama2 13B as our base model. Finetuned the base model on the datasets mentioned above using QLORA which is a technique in PEFT(parameter 		       efficient fientuning) using intel oneapi analytics toolkit.
+
+For document summarization we have finetuned llama2 7B model, we have used intel distribution of MODIN for data loading effiintely and intel optimized tensorflow framework for efiiciently using hardware , we used intel xeon 4th Gen Scalable processors in intel developer cloud platform.
+
+
+ 
+for legal research are using RAG(Retrieval augumented reality) and zephyr-7b-beta model,
+for IPC related quiries resolver we have trained t5 model with Indian penal code dataset by using intel xeon 4th Gen Scalable processors in intel developer cloud platform and we have used intel distribution of MODIN for data loading effiintely, intel optimized tensorflow framework for efiiciently using hardware 
+
+all fine tunings in this project are done by using the mentiond hardware. and we have also used intel optimized pytorch, intel optimized tensorflow,
+
+Use of intel distribution of MODIN, Modin is an open-source Python library that is used to handle large datasets. It is designed to speed up the data analysis process by distributing computations across all available CPU cores or nodes on a cluster. Modin uses pandas DataFrame syntax, which means that you can use it as a drop-in replacement for pandas to speed up your data analysis tasks without changing your existing code.
+
+Modin achieves this improved performance by dividing the dataset into smaller, more manageable pieces, and then processing these pieces in parallel. This parallelization allows Modin to leverage multiple CPU cores to perform computations simultaneously, drastically speeding up data processing and analysis times for large datasets.
+
+For example, if you have a dataset that is too large to fit into memory, you can use Modin to work with this dataset as if it were small enough to fit in memory. Modin will automatically manage the data partitioning and distribution, allowing you to focus on your data analysis tasks.
+
+use of intel optimized tensorflow, Intel Optimized TensorFlow is compatible with Intel Xeon Scalable processors, Intel Core processors, and Intel Atom processors. It includes optimizations that enable low-latency, high-throughput inference performance on Intel processors for a wide range of AI workloads.
+
+These optimizations include:
+Use of Intel Math Kernel Library for Deep Neural Networks (Intel MKL-DNN) primitives: This is an open-source performance library for Deep Learning applications that are intended to accelerate Deep Learning frameworks on Intel architecture.
+Optimization for Intel Advanced Vector Extensions (AVX) instruction sets: AVX is a set of instructions for doing Single Instruction Multiple Data (SIMD) operations to achieve better throughput and performance.
+Threaded, scalable, efficient use of multi-core processors: It allows TensorFlow to utilize all available cores on a CPU, which can lead to significant performance gains.
+Memory optimizations: These aim to reduce the memory footprint of TensorFlow workloads, which can be particularly beneficial for large, complex models.
+
+By using Intel Optimized TensorFlow, developers can leverage these optimizations to run their TensorFlow workloads more efficiently on Intel hardware.
+
+use of intel optimized tensorflow, Intel Optimized PyTorch is a version of the open-source deep learning library, PyTorch, that is optimized for performance on Intel architecture, specifically Intel Xeon Scalable processors. It is designed to deliver high performance for a wide range of deep learning workloads.
+
+Here are a few key elements of Intel Optimized PyTorch:
+Integration with Intel oneAPI Deep Neural Network Library (oneDNN): Intel Optimized PyTorch leverages oneDNN for efficient implementation of low-level tensor operations and neural network layers. oneDNN helps to accelerate computations by using platform-specific instructions on Intel processors.
+Multi-threading and vectorization optimization: Intel Optimized PyTorch optimizes the execution of both single-threaded and multi-threaded workloads on Intel CPUs. It uses advanced vector instructions, including Intel Advanced Vector Extensions 2 (AVX2) and Intel AVX-512.
+Memory management: Intel Optimized PyTorch includes enhancements for efficient use of memory, which can significantly improve performance for large models or large mini-batch sizes.
+Support for distributed training: Intel Optimized PyTorch supports distributed training, enabling you to train models on clusters of Intel hardware.
+
+By using Intel Optimized PyTorch, developers can leverage the performance benefits of Intel hardware, while using the familiar, flexible PyTorch programming model. It is ideal for those who are looking to scale up their PyTorch applications on Intel hardware.
+
+
+
