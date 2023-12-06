@@ -117,6 +117,17 @@ Multi-threading and vectorization optimization: Intel Optimized PyTorch optimize
 Memory management: Intel Optimized PyTorch includes enhancements for efficient use of memory, which can significantly improve performance for large models or large mini-batch sizes.
 Support for distributed training: Intel Optimized PyTorch supports distributed training, enabling you to train models on clusters of Intel hardware.
 
+
+
+
+
+
+
+
+Medium article link
+
+https://medium.com/@tummurihari/revolutionizing-legal-practices-with-ai-legalysis-the-next-gen-legal-platform-16f9d999ef9e
+
 By using Intel Optimized PyTorch, developers can leverage the performance benefits of Intel hardware, while using the familiar, flexible PyTorch programming model. It is ideal for those who are looking to scale up their PyTorch applications on Intel hardware.
 
 
