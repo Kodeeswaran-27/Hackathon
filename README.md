@@ -1,3 +1,7 @@
+pip install transformers torch intel_extension_for_pytorch  intel_extension_for_transformers 
+
+
+
 import socket
 import threading
 
