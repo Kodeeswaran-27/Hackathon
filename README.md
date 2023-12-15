@@ -1,3 +1,64 @@
+import socket
+import threading
+
+def handle_client(client_socket):
+    # Function to be called when a client connects
+    print(f"Received connection from {client_socket.getpeername()}")
+    
+    # Add your specific function here
+    # For example:
+    client_socket.send(b"Hello, client! Your function is called.\n")
+    
+    # Close the client socket
+    client_socket.close()
+
+def start_server():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(('127.0.0.1', 8888))
+    server.listen(5)
+
+    print("[*] Listening on 127.0.0.1:8888")
+
+    while True:
+        client, addr = server.accept()
+        print(f"[*] Accepted connection from {addr[0]}:{addr[1]}")
+        
+        # Create a new thread to handle the client
+        client_handler = threading.Thread(target=handle_client, args=(client,))
+        client_handler.start()
+
+if __name__ == '__main__':
+    start_server()
+
+
+
+
+
+
+import socket
+
+def connect_to_server():
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect(('127.0.0.1', 8888))
+
+    # Send data to the server if needed
+    # For example:
+    # client.send(b"Hello, server! Please call the function.\n")
+    
+    # Receive data from the server
+    response = client.recv(4096)
+    print(response.decode())
+
+    # Close the client socket
+    client.close()
+
+if __name__ == '__main__':
+    connect_to_server()
+
+
+
+
+
 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
 
 
