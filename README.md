@@ -1,6 +1,13 @@
 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
 
 
+
+
+how to fine tune an llm, so that given a case details it should identify the relevant laws and sections applicable to that case
+can you give me an example of the data set that can be used, 3 rows should be good
+
+ok, give me another ten rows for this
+
 # Hackathon
 For intel hackathon internal
 
