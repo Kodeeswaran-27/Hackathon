@@ -289,6 +289,31 @@ if __name__ == '__main__':
 
 
 
+inputs": '''No. XVI of 1950.
+Appli cation under article 32 of the Constitution for a writ of prohibition and certiorari.
+The facts are set out in the judgment.
+C.R.Pattabhi Raman, for the petitioner.
+K. Rajah Ayyar, Advocate General of MadraS, (Ganapathi Ayyar, with him) for the opposite party.
+May 26.
+The Judgment of Kania C.J., Mehr Chand Mahajan, Mukherjea and Das JJ.
+was delivered by Patanjali Sastri J. Fazl Ali J. delivered a separate judgment.
+PATANJALI SASTRI J.
+The petitioner is the printer, publisher and editor of a recently started weekly journal in English called Cross Roads printed and published in Bombay.
+The Government of Madras, the respondents herein, in exer cise of their powers under section 9 (1 A) of the Madras Maintenance of Public Order Act, 1949 (hereinafter referred to as the impugned Act) purported to issue an order No. MS.
+1333 dated 1st March, 1950, whereby they imposed a ban upon the entry and circulation of the journal in that State.
+The order was published in the Fort St. George Gazette and the notification ran as follows : "In exercise of the powers conferred by section 9 (I A) of the Madras Maintenance of Public Order, Act, 1949 (Madras Act XXIII of 1949) His Excellency the Governor of Madras, being satisfied that for the purpose of securing the public safety and the maintenance of public order, it is necessary so to do, hereby prohibits, with effect on and from the date of publication of this order in the Fort St. George Gazette the entry into or the circulation, sale or distribution in the State of Madras or any part thereof of the newspaper entitled Cross Roads an English weekly published at Bombay.
+" The petitioner claims that the said order contravenes the fundamental right of the petitioner to freedom of See the headnote to Brij Bhushan vs The State of Delhi, p. 605 infra.
+596 speech and expression conferred on him by article 19 (1) (a) of the Constitution and he challenges the validity of section 9 (1 A) of the impugned Act as being void under article 13 (1) of the Constitution by reason of its being inconsistent with his fundamental right aforesaid.
+The Advocate General of Madras appearing on be half of the respondents raised a preliminary objection, not indeed to the jurisdiction of this Court to entertain the application under article 32, but to the petitioner resort ing to this Court directly for such relief in the first instance.
+He contended that, as a matter of orderly proce dure, the petitioner should first resort to the High Court at Madras which under article 226 of the Constitution has concurrent jurisdiction to deal with the matter.
+He cited criminal revision petitions under section 435 of the Crimi nal Procedure Code, applications for bail and applications for transfer under section 24 of the Civil Procedure Code as instances where, concurrent jurisdiction having been given in certain matters to the High Court and the Court of a lower grade, a rule of practice has been established that a party should proceed first to the latter Court for relief before resorting to the High Court.
+He referred to Emperor vs Bisheswar Prasad Sinha (1) where such a rule of practice was enforced in a criminal revision case, and called our attention also to certain American decisions Urquhart vs Brown (2) and Hooney vs Kolohan (3) as showing that the Supreme Court of the United States ordinarily required that whatever judicial remedies remained open to the appli cant in Federal and State Courts should be exhausted before the remedy in the Supreme Court be it habeas corpus or certiorari would be allowed.
+We are of opinion that neither the instances mentioned by the learned Advocate General nor the American decisions referred to by him are really analogous to the remedy afforded by article 32 of the Indian Constitution.
+That article does not merely confer power on this Court, as article 226 does on the (1) I.L.R. 56 All.
+
+
+
+
 
 
 
