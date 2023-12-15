@@ -2,6 +2,19 @@ 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
 
 
 
+-L 8888:localhost:8888
+Install Python* virtual environment:
+sudo apt install python3-venv
+Create Python* virtual environment:
+python3 -m venv jupyter_env
+Activate Python* virtual environment:
+source jupyter_env/bin/activate
+Install JupyterLab in Python* virtual environment:
+pip3 install jupyterlab
+Launch JupyterLab in Python* virtual environment:
+jupyter-lab
+
+
 
 how to fine tune an llm, so that given a case details it should identify the relevant laws and sections applicable to that case
 can you give me an example of the data set that can be used, 3 rows should be good
