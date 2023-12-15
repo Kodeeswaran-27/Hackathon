@@ -230,4 +230,65 @@ https://github.com/hari-tummuri/oneAPI-GenAI-Hackathon-2023
 
 
 
+import socket
+import threading
+
+def handle_client(client_socket, parameter):
+    # Function to be called when a client connects
+    print(f"Received connection from {client_socket.getpeername()} with parameter: {parameter}")
+    
+    # Add your specific function here
+    # For example:
+    response = f"Hello, client! Your function is called with parameter: {parameter}\n"
+    client_socket.send(response.encode())
+    
+    # Close the client socket
+    client_socket.close()
+
+def start_server():
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(('127.0.0.1', 8888))
+    server.listen(5)
+
+    print("[*] Listening on 127.0.0.1:8888")
+
+    while True:
+        client, addr = server.accept()
+        print(f"[*] Accepted connection from {addr[0]}:{addr[1]}")
+        
+        # Receive parameter from the client
+        parameter = client.recv(1024).decode()
+        
+        # Create a new thread to handle the client with the received parameter
+        client_handler = threading.Thread(target=handle_client, args=(client, parameter))
+        client_handler.start()
+
+if __name__ == '__main__':
+    start_server()
+
+
+import socket
+
+def connect_to_server(parameter):
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    client.connect(('127.0.0.1', 8888))
+
+    # Send parameter to the server
+    client.send(parameter.encode())
+
+    # Receive data from the server
+    response = client.recv(4096)
+    print(response.decode())
+
+    # Close the client socket
+    client.close()
+
+if __name__ == '__main__':
+    # Pass the parameter when calling connect_to_server
+    connect_to_server("Your_Parameter_Here")
+
+
+
+
+
 
